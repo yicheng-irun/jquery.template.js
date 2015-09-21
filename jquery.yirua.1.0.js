@@ -1,6 +1,7 @@
 //  https://github.com/yicheng-irun/yirua
 /*
     yirua.js
+    A mini and ease-to-use templating plugin for jQuery or Zepto
     @author Yicheng <yicheng-me@qq.com>
     @license MIT
     @version 1.0
