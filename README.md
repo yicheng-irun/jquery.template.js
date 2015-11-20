@@ -1,5 +1,6 @@
 #yirua
-A mini and ease-to-use templating plugin for `jQuery` or `Zepto`.
+A mini and ease-to-use templating plugin for `jQuery` or `Zepto`.<br>
+一个基于jQuery或者Zepto的模板框架的插件。压缩后只有3kb
 <br>
 <br>
 
