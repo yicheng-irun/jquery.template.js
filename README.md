@@ -42,15 +42,15 @@ Or
 <br>
 ##开始编写你的代码(Starting.)
 ####1.  $().render(data);
-######在body中放入如下代码
+##### 在body中放入如下代码
 ```html
-<h1>{{message}}</h1>
-		
+<h1 id="example1">{{message}}</h1>
 <script>
-	$("h1").render({message:"Hello World!"});
+	$("#example1").render({message:"Hello World!"});
 </script>
 ```
-######你将会得到这样 (you will get):
+###### 你将会得到这样 (you will get):
 ```html
 <h1>Hello World!</ht>
 ```
+
