@@ -4,8 +4,8 @@ A mini and ease-to-use templating plugin for `jQuery` or `Zepto`.<br>
 <br>
 <br>
 
-##开始使用(Start)：
-####1.引入JQuery或者Zepto文件。
+##准备工作(Prepare.)
+####1.引入JQuery或者Zepto文件。(Link jQuery or Zepto to html file.)
 ```html
 <script src="jquery.min.js"></script>
 ```
@@ -15,12 +15,12 @@ Or
 ```
 
 
-####2.引入jquery.yirua.js。
+####2.引入jquery.yirua.js(Link jquery.yirua.js to html file.)。
 ```html
 <script src="jquery.yirua.min.js"></script>
 ```
 
-####3.你现在获得类似这样的结构。
+####3.你现在获得类似这样的文件。
 ```html
 <!DOCTYPE html>
 <html>
@@ -37,4 +37,20 @@ Or
 		</script>
 	</body>
 </html>
+```
+
+<br>
+##开始编写你的代码(Starting.)
+####1.  $().render(data);
+######在body中放入如下代码
+```html
+<h1>{{message}}</h1>
+		
+<script>
+	$("h1").render({message:"Hello World!"});
+</script>
+```
+######你将会得到这样 (you will get):
+```html
+<h1>Hello World!</ht>
 ```
