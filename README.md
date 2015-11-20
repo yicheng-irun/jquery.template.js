@@ -19,3 +19,5 @@ Or
 ```html
 <script src="jquery.yirua.min.js"></script>
 ```
+
+####3.你现在获得类似这样的结构
