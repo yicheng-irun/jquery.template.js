@@ -20,4 +20,21 @@ Or
 <script src="jquery.yirua.min.js"></script>
 ```
 
-####3.你现在获得类似这样的结构
+####3.你现在获得类似这样的结构。
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    	<title>yirua模版框架</title>
+		<script src="jquery.min.js"></script>
+		<!--<script src="zepto.min.js"></script>--><!-- 你也可以考虑用这个框架 -->
+		<script src="jquery.yirua.min.js"></script>
+	</head>
+	<body>
+		<script>
+			
+		</script>
+	</body>
+</html>
+```
