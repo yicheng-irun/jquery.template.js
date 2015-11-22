@@ -42,7 +42,7 @@ Or
 <br>
 ##开始编写你的代码(Coding.)
 ####1.  $().render(data);
-##### 1>在body中放入如下代码(Add the following code in your body). See the example.html#example
+##### 1>在body中放入如下代码(Add the following code in your body). See the example.html#example1.
 ```html
 <h1 id="example1">{{message}}</h1>
 <script>
@@ -54,7 +54,7 @@ Or
 <h1>Hello World!</ht>
 ```
 
-##### 2>示例2(example2). See the example.html#example2
+##### 2>示例2(example2). See the example.html#example2.
 ```html
 <div id="example2">
 	<h1>{{title}}</h1>
@@ -74,4 +74,29 @@ Or
 	<h1>Hello engineers!</h1>
 	<h2>Welcome to use this template plug-ins!</h2>
 </div>
+```
+
+##### 3>示例3(example3). See the example.html#example3.
+> 'yr-model' for 'list' or 'map'.
+```html
+<ul id="example3" yr-model="a in b">
+	<li>key:{{a._key}} and Data:{{a}}</li>
+</ul>
+<script>
+	var exampleData3 = [
+		"aaaaa",
+		"bbbbb",
+		"ccccc",
+		"ddddd"
+	];
+	$("#example3").render(exampleData3);
+</script>
+```
+###### 你将会得到这样 (you will get):
+```html
+<ul id="example3" yr-model="a in b">
+	<li>key:0 and Data:aaaaa</li>
+	<li>key:1 and Data:bbbbb</li>
+	<li>key:2 and Data:ccccc</li>
+</ul>
 ```
