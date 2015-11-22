@@ -45,9 +45,10 @@ Or
 ##### 在body中放入如下代码
 ```html
 <h1 id="example1">{{message}}</h1>
-<script>
-	$("#example1").render({message:"Hello World!"});
-</script>
+```
++
+```javascript
+$("#example1").render({message:"Hello World!"});
 ```
 ###### 你将会得到这样 (you will get):
 ```html
