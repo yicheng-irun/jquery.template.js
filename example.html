@@ -8,10 +8,27 @@
 		<script src="jquery.yirua.1.1.min.js"></script>
 	</head>
 	<body>
-		<h1>{{message}}</h1>
 		
+		<h1 id="example1">{{message}}</h1>
 		<script>
-			$("h1").render({message:"Hello World!"});
+			$("#example1").render({message:"Hello World!"});
 		</script>
+		
+		<hr>
+		
+		<div id="example2">
+			<h1>{{title}}</h1>
+			<h2>{{subtitle}}</h2>
+		</div>
+		<script>
+			var exampleData2 = {
+				title:"Hello engineers!",
+				subtitle:"Welcome to use this template plug-ins!"
+			};
+			$("#example2").render(exampleData2);
+		</script>
+		
+		
+		
 	</body>
 </html>

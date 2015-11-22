@@ -40,7 +40,7 @@ Or
 ```
 
 <br>
-##开始编写你的代码(Starting.)
+##开始编写你的代码(Coding.)
 ####1.  $().render(data);
 ##### 在body中放入如下代码
 ```html
@@ -54,3 +54,24 @@ Or
 <h1>Hello World!</ht>
 ```
 
+##### 在body中放入如下代码
+```html
+<div id="example2">
+	<h1>{{title}}</h1>
+	<h2>{{subtitle}}</h2>
+</div>
+<script>
+	var exampleData2 = {
+		title:"Hello engineers!",
+		subtitle:"Welcome to use this template plug-ins!"
+	};
+	$("#example2").render(exampleData2);
+</script>
+```
+###### 你将会得到这样 (you will get):
+```html
+<div id="example2">
+	<h1>Hello engineers!</h1>
+	<h2>Welcome to use this template plug-ins!</h2>
+</div>
+```
