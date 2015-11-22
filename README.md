@@ -43,6 +43,7 @@ Or
 ##开始编写你的代码(Coding.)
 ####1.  $().render(data);
 ##### 1>在body中放入如下代码(Add the following code in your body). See the example.html#example1.
+> 
 ```html
 <h1 id="example1">{{message}}</h1>
 <script>
@@ -55,6 +56,7 @@ Or
 ```
 
 ##### 2>示例2(example2). See the example.html#example2.
+> 
 ```html
 <div id="example2">
 	<h1>{{title}}</h1>
