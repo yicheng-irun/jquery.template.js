@@ -1,5 +1,4 @@
-﻿//  https://github.com/yicheng-irun/yirua
-/*
+﻿/*
     https://github.com/yicheng-irun/yirua
     yirua.js
     A mini and ease-to-use templating plugin for jQuery or Zepto
