@@ -1,4 +1,5 @@
-﻿/*
+﻿//  https://github.com/yicheng-irun/yirua
+/*
     https://github.com/yicheng-irun/yirua
     yirua.js
     A mini and ease-to-use templating plugin for jQuery or Zepto
@@ -204,6 +205,19 @@
             this.eq(ti).append(renderTemplate(tplt, vars), null);
         }
         return this;
+    }
+
+    $.fn.renderPrepend = function (vars) {
+        var tplt;
+        for (var ti = 0; ti < this.length; ti++) {
+            tplt = getTemplate(this.eq(ti), null);
+            this.eq(ti).prepend(renderTemplate(tplt, vars), null);
+        }
+        return this;
+    }
+
+    $.yirua.setValueRegex = function (regex) {
+        valueRegex = regex;
     }
 
 })(window["jQuery"] ? window.jQuery : window["Zepto"] ? window["Zepto"] : null);
