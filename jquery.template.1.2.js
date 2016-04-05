@@ -1,7 +1,7 @@
-﻿//  https://github.com/yicheng-irun/yirua
+﻿//  https://github.com/yicheng-irun/jquery.template.js
 /*
-    https://github.com/yicheng-irun/yirua
-    yirua.js
+    https://github.com/yicheng-irun/jquery.template.js
+    jquery.template.js
     A mini and ease-to-use templating plugin for jQuery or Zepto
     @author Yicheng <yicheng-me@qq.com>
     @license MIT
@@ -14,8 +14,8 @@
         return;
     }
     var templateList = {};
-    $.yirua = {};
-    $.yirua.VERSION = "1.1";
+    $.template = {};
+    $.template.VERSION = "1.2";
 
 
     var valueRegex = /\{\{(.+?)\}\}/g;// /\{\{([=%])(.+?)\}\}/g;
@@ -25,7 +25,7 @@
         var hc = htmldom.children(), r = [], sh;
         for (var ci = 0; ci < hc.length; ci++) {
             sh = hc.eq(ci);
-            if (sh.attr("yr-model") != undefined) {
+            if (sh.attr("jt-model") != undefined) {
                 r.push(hc.eq(ci));
             } else {
                 r = r.concat(getChildModelDom(sh));
@@ -34,12 +34,12 @@
         return r;
     }
     //解析模版
-    function parseTemplate($htmldom, ysparent) {
+    function parseTemplate($htmldom, jtparent) {
         var psobj = {
             type: null,  // text,map,if
             varp: null,
             varc: null,
-            parent: ysparent,
+            parent: jtparent,
             childidlist: [],
             yshtml: ""
         };
@@ -51,7 +51,7 @@
             psobj.childidlist.push(getTemplate(cdlist[cdi], psobj));
         }
         psobj.yshtml = $htmldom.html();
-        ysmd = $htmldom.attr("yr-model");
+        ysmd = $htmldom.attr("jt-model");
         if (ysmd != undefined) {
             wds = ysmd.split(" ");
             if (wds[1] && wds[0] == 'if') { //This feature in version 2.0 release
@@ -70,20 +70,20 @@
 
     //获取ys模版对象
     function getTemplate(_this, ysparent) {
-        if (!_this.attr("yr-model-id")) {
+        if (!_this.attr("jt-model-id")) {
             var ttime = new Date().getTime() + "" + (Math.random() * 10).toFixed(0);
             while (templateList[ttime]) {
                 ttime = new Date().getTime() + "" + (Math.random() * 10).toFixed(0);
             }
             templateList[ttime] = true;
-            _this.attr("yr-model-id", ttime + "");
+            _this.attr("jt-model-id", ttime + "");
             templateList[ttime] = parseTemplate(_this, ysparent);
             _this.html("");
             if (ysparent) {
                 return ttime;
             }
         }
-        return templateList[_this.attr("yr-model-id")];
+        return templateList[_this.attr("jt-model-id")];
     }
 
     function findValue(varstr, tvars, getnode) {
@@ -126,17 +126,17 @@
         var sihtml = template.yshtml.replace(valueRegex, function (arg1, arg2, arg3, arg4) {
             return getValue(arg2, zyyobj);
         });
-        if (sihtml.indexOf("yr-src") != -1) {
+        if (sihtml.indexOf("jt-src") != -1) {
             $tdiv = $(document.createElement("div")).html(sihtml);
-            $tdiv.find("[yr-src]").each(function (idx, dom) {
-                $(this).attr("src", $(this).attr("yr-src"));
+            $tdiv.find("[jt-src]").each(function (idx, dom) {
+                $(this).attr("src", $(this).attr("jt-src"));
             });
         }
-        if (sihtml.indexOf("yr-model") != -1) {
+        if (sihtml.indexOf("jt-model") != -1) {
             if ($tdiv == null) {
                 $tdiv = $(document.createElement("div")).html(sihtml);
             }
-            var cdms = $tdiv.find("[yr-model]");
+            var cdms = $tdiv.find("[jt-model]");
             for (var ci = 0; ci < cdms.length; ci++) {
                 var tplt = getTemplate(cdms.eq(ci), template);
                 cdms.eq(ci).html(renderTemplate(tplt, getValue(tplt.varp, zyyobj), zyyobj));
@@ -216,8 +216,8 @@
         return this;
     }
 
-    $.yirua.setValueRegex = function (regex) {
+    $.template.setValueRegex = function (regex) {
         valueRegex = regex;
     }
 
-})(window["jQuery"] ? window.jQuery : window["Zepto"] ? window["Zepto"] : null);
+})(window["jQuery"] ? window["jQuery"] : window["Zepto"] ? window["Zepto"] : null);

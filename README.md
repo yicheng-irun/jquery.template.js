@@ -1,4 +1,4 @@
-#yirua
+#jquery.template.js
 A mini and ease-to-use templating plugin for `jQuery` or `Zepto`.<br>
 一个基于jQuery或者Zepto的模板框架的插件。压缩后只有3kb
 <br>
@@ -9,15 +9,15 @@ A mini and ease-to-use templating plugin for `jQuery` or `Zepto`.<br>
 ```html
 <script src="jquery.min.js"></script>
 ```
-Or
+Or(或者)
 ```html
 <script src="zepto.min.js"></script>
 ```
 
 
-####2.引入jquery.yirua.js(Link jquery.yirua.js to html file.)。
+####2.引入jquery.template.js(Link jquery.template.js to html file.)。
 ```html
-<script src="jquery.yirua.min.js"></script>
+<script src="jquery.template.min.js"></script>
 ```
 
 ####3.你现在获得类似这样的文件。
@@ -26,10 +26,10 @@ Or
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    	<title>yirua模版框架</title>
+    	<title>jquery.template.js</title>
 		<script src="jquery.min.js"></script>
 		<!--<script src="zepto.min.js"></script>--><!-- 你也可以考虑用这个框架 -->
-		<script src="jquery.yirua.min.js"></script>
+		<script src="jquery.template.min.js"></script>
 	</head>
 	<body>
 		<script>
@@ -79,9 +79,9 @@ Or
 ```
 
 ##### 3>示例3(example3). See the example.html#example3.
-> 'yr-model' for 'list' or 'map'.
+> 'jt-model' for 'list' or 'map'.
 ```html
-<ul id="example3" yr-model="a in b">
+<ul id="example3" jt-model="a in b">
 	<li>key:{{a._key}} and Data:{{a}}</li>
 </ul>
 <script>
@@ -96,7 +96,7 @@ Or
 ```
 ###### 你将会得到这样 (you will get):
 ```html
-<ul id="example3" yr-model="a in b">
+<ul id="example3" jt-model="a in b">
 	<li>key:0 and Data:aaaaa</li>
 	<li>key:1 and Data:bbbbb</li>
 	<li>key:2 and Data:ccccc</li>

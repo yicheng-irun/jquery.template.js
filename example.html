@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    	<title>yirua模版框架</title>
+    	<title>jquery.template.js</title>
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<!--<script src="zepto.min.1.1.6.js"></script>-->
-		<script src="jquery.yirua.1.2.min.js"></script>
+		<script src="jquery.template.1.2.js"></script>
 	</head>
 	<body>
 		
@@ -30,7 +30,7 @@
 		
 		<hr>
 		
-		<ul id="example3" yr-model="a in b">
+		<ul id="example3" jt-model="a in b">
 			<li>key:{{a._key}} and Data:{{a}}</li>
 		</ul>
 		<script>
@@ -42,6 +42,68 @@
 			];
 			$("#example3").render(exampleData3);
 		</script>
+
+        <hr>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>homepage</th>
+                </tr>
+            </thead>
+            <tbody id="example4" jt-model="a in b">
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{homepage}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+			var exampleData4 = [
+				{
+				    name: "google",
+				    homepage: "https://www.google.com",
+				},
+                {
+                    name: "baidu",
+                    homepage: "https://www.baidu.com",
+                },
+                {
+				    name: "bing",
+				    homepage: "http://bing.com",
+				}
+			];
+			$("#example4").render(exampleData4);
+
+			var exampleData4_2 = [
+				{
+				    name: "apple",
+				    homepage: "http://www.apple.com/",
+				},
+                {
+                    name: "facebook",
+                    homepage: "http://www.facebook.com",
+                },
+                {
+                    name: "youtobe",
+                    homepage: "http://www.youtube.com",
+                }
+			];
+			var flag = true;
+			setInterval(function () {
+
+			    if (flag) {
+			        $("#example4").renderAppend(exampleData4_2);
+			        flag = false;
+			    } else {
+			        $("#example4").render(exampleData4);
+			        flag = true;
+			    }
+			    
+			}, 1000);
+			
+        </script>
 		
 	</body>
 </html>
